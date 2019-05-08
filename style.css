@@ -1626,6 +1626,9 @@ header {
 	line-height: 22px;
     text-align: center;
 	}
+.upload.hover{
+    background: #eefafa;
+	}
 
 .upload a{
     color:#7f7f7f;
@@ -1667,6 +1670,8 @@ header {
 .fu_file p{
 	position: relative;
 	margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
 	color: #29bfbd;
 	}
 

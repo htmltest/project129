@@ -21,7 +21,7 @@
 		return false;
 	});
 	jQuery(document).click( function(event){
-		if( jQuery(event.target).closest(".top_search").length ) 
+		if( jQuery(event.target).closest(".top_search").length )
 		return;
 		jQuery(".search").removeClass('open');
 		event.stopPropagation();
@@ -75,38 +75,61 @@
         jQuery(this).parent().find('input').click();
     });
 
-    jQuery('.upload').fileupload({
-        dropZone: jQuery(this),
-        add: function (e, data) {
-            var tpl = jQuery('<div class="fu_file working"><div class="progress"></div><p></p><span></span></div>');
-            var th = jQuery(this);
-            tpl.find('p').text(data.files[0].name);
-            data.context = tpl.appendTo(th);
-            tpl.find('span').click(function(){
-                if(tpl.hasClass('working')){
-                    jqXHR.abort();
-                }
-                tpl.fadeOut(function(){
-                    tpl.remove();
+    jQuery('.upload').each(function() {
+        jQuery(this).fileupload({
+            dropZone: jQuery(this),
+            add: function (e, data) {
+                var tpl = jQuery('<div class="fu_file working"><div class="progress"></div><p></p><span></span></div>');
+                var th = jQuery(this);
+                tpl.find('p').text(data.files[0].name);
+                data.context = tpl.appendTo(th);
+                tpl.find('span').click(function(){
+                    if(tpl.hasClass('working')){
+                        jqXHR.abort();
+                    }
+                    tpl.fadeOut(function(){
+                        tpl.remove();
+                    });
                 });
-            });
-            var jqXHR = data.submit();
-        },
-        progress: function(e, data){
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            if(progress == 100){
-                data.context.removeClass('working');
+                var jqXHR = data.submit();
+            },
+            progress: function(e, data){
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                if(progress == 100){
+                    data.context.removeClass('working');
+                }
+                jQuery(this).find('.progress').css(
+                    'width', progress + '%'
+                );
+            },
+            done:function(e, data){
+                var result = jQuery.parseJSON(data.result);
+                if (result.status == 'error') {
+                    data.context.addClass('error');
+                }
+            },
+            fail:function(e, data){
+                data.context.addClass('error');
             }
-            jQuery(this).find('.progress').css(
-                'width', progress + '%'
-            );
-        },
-        fail:function(e, data){
-            data.context.addClass('error');
-        }
+        });
     });
 
-
+    jQuery(document).bind('dragover', function (e) {
+        var dropZones = jQuery('.upload'),
+            timeout = window.dropZoneTimeout;
+        if (timeout) {
+            clearTimeout(timeout);
+        } else {
+            dropZones.addClass('in');
+        }
+        var hoveredDropZone = jQuery(e.target).closest(dropZones);
+        dropZones.not(hoveredDropZone).removeClass('hover');
+        hoveredDropZone.addClass('hover');
+        window.dropZoneTimeout = setTimeout(function () {
+            window.dropZoneTimeout = null;
+            dropZones.removeClass('in hover');
+        }, 100);
+    });
 
 	jQuery('a.modal').click(function() {
 		var id = jQuery(this).attr('href');
@@ -132,7 +155,7 @@
 
 
 
-	jQuery('.go_slow').click(function () { 
+	jQuery('.go_slow').click(function () {
 		elementClick = this.hash;
 		destination = jQuery(elementClick).offset().top;
 		jQuery('body,html').animate( { scrollTop: destination }, 300 );
@@ -157,7 +180,7 @@
 				jQuery(this).addClass('fancybox').attr('rel','fancybox').getTitle();
 			}
 		}
-	});  
+	});
 	jQuery('a.fancybox').fancybox({
 		'padding': 2,
 		'overlayColor': '#000000',
