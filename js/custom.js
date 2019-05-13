@@ -107,6 +107,9 @@
                 if (result.status == 'error') {
                     data.context.addClass('error');
                 }
+                if (result.status == 'success') {
+                    data.context.parent().find('input[type="hidden"]').val(result.path);
+                }
             },
             fail:function(e, data){
                 data.context.addClass('error');
