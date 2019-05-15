@@ -1642,6 +1642,11 @@ header {
 .upload input{
     display:none;
 	}
+.upload label.error {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
 
 .fu_file{
 	width: 90%;
@@ -1925,3 +1930,9 @@ footer {
 	}
 
 /* END MODAL */
+
+
+select.error+label.error {position:absolute; left:0; bottom:0}
+select.error+label.error+.jq-selectbox__select {margin-bottom:24px}
+.jq-checkbox.required {overflow:visible}
+.jq-checkbox label.error {position:absolute; left:0; bottom:100%; margin-bottom:5px; white-space:nowrap}

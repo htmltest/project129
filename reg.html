@@ -87,55 +87,58 @@
 		<section id="content">
 			<div class="bread"><a href="#">Главная</a> <span>→</span> Регистрация</div>
 			<div class="reg_form">
-				<form method="post" action="upload.php" enctype="multipart/form-data">
+				<form method="post" action="upload.php" enctype="multipart/form-data" class="validate">
 					<h1>Регистрация</h1>
 					<div class="reg_form_bl">
 						<h2>Личные данные</h2>
 						<div class="reg_form_line">
-							<label class="lab">Категория, к которой Вы относитесь</label>
-							<select>
-								<option>Представитель НЦМУ</option>
-								<option>Представитель НЦМУ 2</option>
-								<option>Представитель НЦМУ 3</option>
+							<label class="lab">Категория, к которой Вы относитесь <span class="req">*</span></label>
+							<select name="category" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Представитель НЦМУ</option>
+								<option value="2">Представитель НЦМУ 2</option>
+								<option value="3">Представитель НЦМУ 3</option>
 							</select>
 						</div>
 						<div class="reg_form_line">
 							<label class="lab">Фамилия <span class="req">*</span></label>
-							<input class="inp required" type="text" value=""/>
+							<input class="inp required" type="text" value="" name="lastname" />
 						</div>
 						<div class="reg_form_line">
 							<label class="lab">Имя <span class="req">*</span></label>
-							<input class="inp required" type="text" value=""/>
+							<input class="inp required" type="text" value="" name="firstname"/>
 						</div>
 						<div class="reg_form_line">
-							<label class="lab">Отчество</label>
-							<input class="inp" type="text" value=""/>
+							<label class="lab">Отчество <span class="req">*</span></label>
+							<input class="inp required" type="text" value="" name="middlename" />
 						</div>
 						<div class="reg_form_line">
-							<label class="lab">Контактный телефон</label>
-							<input class="inp" type="tel" value=""/>
+							<label class="lab">Контактный телефон <span class="req">*</span></label>
+							<input class="inp required maskPhone" type="tel" value="" name="tel" />
 						</div>
 						<div class="reg_form_line">
-							<label class="lab">Адрес электронной почты</label>
-							<input class="inp" type="email" value=""/>
+							<label class="lab">Адрес электронной почты <span class="req">*</span></label>
+							<input class="inp required email" type="email" value="" name="email" />
 						</div>
 					</div>
 					<div class="reg_form_bl">
 						<h2>Данные заявки</h2>
 						<div class="reg_form_line">
 							<label class="lab">Тип НЦМУ, на создание которого подается заявка</label>
-							<select>
-								<option>Международный математический центр</option>
-								<option>Международный математический центр 2</option>
-								<option>Международный математический центр 3</option>
+							<select name="type_ncmu" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Международный математический центр</option>
+								<option value="2">Международный математический центр 2</option>
+								<option value="3">Международный математический центр 3</option>
 							</select>
 						</div>
 						<div class="reg_form_line">
 							<label class="lab">Тип организации, которую Вы представляете</label>
-							<select>
-								<option>Научная организация</option>
-								<option>Научная организация 2</option>
-								<option>Научная организация 3</option>
+							<select name="type_company" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Научная организация</option>
+								<option value="2">Научная организация 2</option>
+								<option value="3">Научная организация 3</option>
 							</select>
 						</div>
 					</div>
@@ -143,53 +146,57 @@
 						<div class="reg_form_bl_t">Территориальная принадлежность <br />представляемой организации</div>
 						<div class="reg_form_line">
 							<label class="lab">Страна</label>
-							<select>
-								<option>Россия</option>
-								<option>Азербайджан</option>
-								<option>Армения</option>
-								<option>Белоруссия</option>
-								<option>Грузия</option>
-								<option>Казахстан</option>
+							<select name="country" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Россия</option>
+								<option value="2">Азербайджан</option>
+								<option value="3">Армения</option>
+								<option value="4">Белоруссия</option>
+								<option value="5">Грузия</option>
+								<option value="6">Казахстан</option>
 							</select>
 						</div>
 						<div class="reg_form_line">
 							<label class="lab">Федеральный округ</label>
-							<select>
-								<option>Центральный</option>
-								<option>Центральный 2</option>
-								<option>Центральный 3</option>
+							<select name="district" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Центральный</option>
+								<option value="2">Центральный 2</option>
+								<option value="3">Центральный 3</option>
 							</select>
 						</div>
 						<div class="reg_form_line">
 							<label class="lab">Регион</label>
-							<select>
-								<option>Московская область</option>
-								<option>Московская область 2</option>
-								<option>Московская область 3</option>
+							<select name="region" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Московская область</option>
+								<option value="2">Московская область 2</option>
+								<option value="3">Московская область 3</option>
 							</select>
 						</div>
 						<div class="reg_form_line">
 							<label class="lab">Город</label>
-							<select>
-								<option>Москва</option>
-								<option>Москва 2</option>
-								<option>Москва 3</option>
+							<select name="city" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Москва</option>
+								<option value="2">Москва 2</option>
+								<option value="3">Москва 3</option>
 							</select>
 						</div>
 					</div>
 					<div class="reg_form_bl">
 						<div class="reg_form_line">
 							<label class="lab">Ведомственная принадлежность представляемой организации</label>
-							<select>
-								<option></option>
-								<option>Ведомственная принадлежность</option>
-								<option>Ведомственная принадлежность 2</option>
-								<option>Ведомственная принадлежность 3</option>
+							<select name="department" class="required">
+								<option value="">не выбрано</option>
+								<option value="1">Ведомственная принадлежность</option>
+								<option value="2">Ведомственная принадлежность 2</option>
+								<option value="3">Ведомственная принадлежность 3</option>
 							</select>
 						</div>
 						<div class="reg_form_line">
 							<label class="lab">Полное название представляемой организации, включая организационно-правовую форму</label>
-							<input class="inp" type="text" value=""/>
+							<input class="inp required" type="text" value="" name="fullname" />
 						</div>
 					</div>
 					<div class="reg_form_bl">
@@ -198,7 +205,7 @@
 							<label class="lab3">Опись документов, представляемых на конкурс (форма 1)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl1" />
+								<input type="file" name="upl1" class="required" class="required" />
 								<input type="hidden" name="upl1_path" />
 							</div>
 						</div>
@@ -206,7 +213,7 @@
 							<label class="lab3">Согласие на участие в конкурсе (форма 2)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl2" />
+								<input type="file" name="upl2" class="required" />
 								<input type="hidden" name="upl2_path" />
 							</div>
 						</div>
@@ -214,7 +221,7 @@
 							<label class="lab3">Сопроводительное письмо</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl3" />
+								<input type="file" name="upl3" class="required" />
 								<input type="hidden" name="upl3_path" />
 							</div>
 						</div>
@@ -222,7 +229,7 @@
 							<label class="lab3">Анкета участника конкурса (форма 3)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl4" />
+								<input type="file" name="upl4" class="required" />
 								<input type="hidden" name="upl4_path" />
 							</div>
 						</div>
@@ -230,7 +237,7 @@
 							<label class="lab3">Копии учредительных документов участника конкурса</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl5" />
+								<input type="file" name="upl5" class="required" />
 								<input type="hidden" name="upl5_path" />
 							</div>
 						</div>
@@ -238,7 +245,7 @@
 							<label class="lab3">Выписка из Единого государственного реестра юридических лиц</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl6" />
+								<input type="file" name="upl6" class="required" />
 								<input type="hidden" name="upl6_path" />
 							</div>
 						</div>
@@ -246,7 +253,7 @@
 							<label class="lab3">Декларация о соответствии участника конкурса установленным конкурсной документацией требованиям  (форма 4)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl7" />
+								<input type="file" name="upl7" class="required" />
 								<input type="hidden" name="upl7_path" />
 							</div>
 						</div>
@@ -254,7 +261,7 @@
 							<label class="lab3">Письменное согласие учредителя участника конкурса </label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl8" />
+								<input type="file" name="upl8" class="required" />
 								<input type="hidden" name="upl8_path" />
 							</div>
 						</div>
@@ -262,7 +269,7 @@
 							<label class="lab3">Документы, подтверждающие полномочия лиц на осуществление действий от имени участника конкурса (форма 5)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl9" />
+								<input type="file" name="upl9" class="required" />
 								<input type="hidden" name="upl9_path" />
 							</div>
 						</div>
@@ -270,7 +277,7 @@
 							<label class="lab3">Гарантийное письмо (форма 6)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl10" />
+								<input type="file" name="upl10" class="required" />
 								<input type="hidden" name="upl10_path" />
 							</div>
 						</div>
@@ -278,7 +285,7 @@
 							<label class="lab3">Копия соглашения о консорциуме (форма 7)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl11" />
+								<input type="file" name="upl11" class="required" />
 								<input type="hidden" name="upl11_path" />
 							</div>
 						</div>
@@ -286,7 +293,7 @@
 							<label class="lab3">Проект программы создания и развития НЦМУ (форма 8)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl12" />
+								<input type="file" name="upl12" class="required" />
 								<input type="hidden" name="upl12_path" />
 							</div>
 						</div>
@@ -294,7 +301,7 @@
 							<label class="lab3">Финансово-экономическое обоснование объема бюджетного и внебюджетного финансирования НЦМУ (форма 9)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl13" />
+								<input type="file" name="upl13" class="required" />
 								<input type="hidden" name="upl13_path" />
 							</div>
 						</div>
@@ -302,7 +309,7 @@
 							<label class="lab3">Письмо с предложением кандидатов для включения в состав международного наблюдательного совета НЦМУ</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl14" />
+								<input type="file" name="upl14" class="required" />
 								<input type="hidden" name="upl14_path" />
 							</div>
 						</div>
@@ -310,7 +317,7 @@
 							<label class="lab3">Документы, подтверждающие представленные участником конкурса сведения о его квалификации</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl15" />
+								<input type="file" name="upl15" class="required" />
 								<input type="hidden" name="upl15_path" />
 							</div>
 						</div>
@@ -318,7 +325,7 @@
 							<label class="lab3">Перечень целевых показателей результативности деятельности НЦМУ (форма 10)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl16" />
+								<input type="file" name="upl16" class="required" />
 								<input type="hidden" name="upl16_path" />
 							</div>
 						</div>
@@ -326,7 +333,7 @@
 							<label class="lab3">Показатели деятельности участника конкурса (форма 11)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl17" />
+								<input type="file" name="upl17" class="required" />
 								<input type="hidden" name="upl17_path" />
 							</div>
 						</div>
@@ -334,7 +341,7 @@
 							<label class="lab3">Сведения для определения преодоления нижних порогов значений показателей для участников конкурса (форма 12)</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl18" />
+								<input type="file" name="upl18" class="required" />
 								<input type="hidden" name="upl18_path" />
 							</div>
 						</div>
@@ -342,13 +349,13 @@
 							<label class="lab3">Иные документы на усмотрение участника конкурса</label>
 							<div class="upload">
 								<a>перенесите сюда файлы</a>
-								<input type="file" name="upl19" />
+								<input type="file" name="upl19" class="required" />
 								<input type="hidden" name="upl19_path" />
 							</div>
 						</div>
 					</div>
 					<div class="reg_form_bl">
-						<div class="reg_form_sogl"><label for="chec1"><input type="checkbox" id="chec1" name="chec" value="1" checked /> Даю согласие на обработку персональных данных <span class="red">*</span><br /> <a href="#">посмотреть условия</a></label></div>
+						<div class="reg_form_sogl"><label for="chec1"><input type="checkbox" id="chec1" name="chec" value="1" checked class="required" /> Даю согласие на обработку персональных данных <span class="red">*</span><br /> <a href="#">посмотреть условия</a></label></div>
 						<div class="reg_form_sub"><input class="btn btn_sm" type="submit" value="Отправить" /></div>
 						<div class="clear"></div>
 					</div>
@@ -424,6 +431,8 @@
 	<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
 	<script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
 	<script type="text/javascript" src="js/jquery.fileupload.js"></script>
+
+	<script type="text/javascript" src="js/jquery.inputmask.min.js"></script>
 
 	<script type="text/javascript" src="js/custom.js"></script>
 

@@ -45,7 +45,9 @@
 
 
 
-	jQuery(".validate").validate();
+	jQuery('.maskPhone').inputmask('(999)9999999');
+
+    jQuery(".validate").validate({ignore: ''});
 
 
 
