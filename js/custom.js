@@ -21,7 +21,7 @@
 		return false;
 	});
 	jQuery(document).click( function(event){
-		if( jQuery(event.target).closest(".top_search").length )
+		if( jQuery(event.target).closest(".top_search").length ) 
 		return;
 		jQuery(".search").removeClass('open');
 		event.stopPropagation();
@@ -40,18 +40,14 @@
 
 
 	jQuery('input.file, input[type="checkbox"], input[type="radio"], select').styler({
-		filePlaceholder: 'Прикрепить файл',
+		filePlaceholder: 'ÐŸÑ€Ð¸ÐºÑ€ÐµÐ¿Ð¸Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»',
 	});
 
+	jQuery('.maskPhone').inputmask('9(999)9999999');
 
-
-	jQuery('.maskPhone').inputmask('(999)9999999');
-
-    jQuery(".validate").validate({ignore: ''});
-
-
-
-	jQuery('.slider').slick({
+  jQuery(".validate").validate({ignore: ''});
+	
+  jQuery('.slider').slick({
 		dots: true,
 		arrows: true,
 		autoplay: true,
@@ -61,8 +57,6 @@
 		slidesToScroll: 1,
 	});
 
-
-
 	jQuery('.top_user').hover(
 	function() {
 		jQuery(this).find('ul').fadeIn(100);
@@ -70,8 +64,6 @@
 	function() {
 		jQuery(this).find('ul').fadeOut(100);
 	});
-
-
 
     jQuery('.upload a').click(function(){
         jQuery(this).parent().find('input').click();
@@ -81,6 +73,7 @@
         jQuery(this).fileupload({
             dropZone: jQuery(this),
             add: function (e, data) {
+                data.url = '/local/ajax/request.file.upload.php';
                 var tpl = jQuery('<div class="fu_file working"><div class="progress"></div><p></p><span></span></div>');
                 var th = jQuery(this);
                 tpl.find('p').text(data.files[0].name);
@@ -106,11 +99,11 @@
             },
             done:function(e, data){
                 var result = jQuery.parseJSON(data.result);
-                if (result.status == 'error') {
-                    data.context.addClass('error');
-                }
                 if (result.status == 'success') {
                     data.context.parent().find('input[type="hidden"]').val(result.path);
+                }
+                else{
+                    data.context.addClass('error');
                 }
             },
             fail:function(e, data){
@@ -160,7 +153,7 @@
 
 
 
-	jQuery('.go_slow').click(function () {
+	jQuery('.go_slow').click(function () { 
 		elementClick = this.hash;
 		destination = jQuery(elementClick).offset().top;
 		jQuery('body,html').animate( { scrollTop: destination }, 300 );
@@ -185,7 +178,7 @@
 				jQuery(this).addClass('fancybox').attr('rel','fancybox').getTitle();
 			}
 		}
-	});
+	});  
 	jQuery('a.fancybox').fancybox({
 		'padding': 2,
 		'overlayColor': '#000000',
