@@ -218,7 +218,7 @@ h6, .h6{
 	}
 
 .table tr:hover td, .entry table tr:hover td{
-	background: #dbf8f8;
+	background: #f5f5f5;
 	}
 
 .tab_no_rb, .table_no_rb tr th, .table_no_rb tr td {
@@ -1621,7 +1621,6 @@ header {
 	height: 22px;
     padding: 20px;
     border: 1px dashed #b2b2b2;
-	overflow: hidden;
 	position: relative;
 	line-height: 22px;
     text-align: center;
@@ -1646,7 +1645,7 @@ header {
 .upload label.error {
     position: absolute;
     left: 5px;
-    bottom: 5px;
+    bottom: -16px;
 }
 .fu_file{
 	width: 90%;
@@ -1696,9 +1695,6 @@ header {
     cursor:pointer;
 	}
 
-.fu_file.working span{
-    background-position: 0 0px;
-	}
 
 .reg_form_sogl{
 	float: left;
@@ -1994,3 +1990,10 @@ blockquote.time_info p{ margin: 0 }
 blockquote.time_info{ padding: 20px 50px; border-top: 5px solid #f5d008; background: #FFE65E; }
 
 .btn.red{background-color: #FF6B35}
+
+.no-required-file+.upload {margin-top:5px}
+
+.upload-multiple {height:auto}
+.upload-multiple .fu_file {position:relative; left:auto; top:auto; margin:10px 0 0 0; border: 1px dashed #b2b2b2;}
+
+.btn.disabled {cursor:default; pointer-events:none; opacity:0.5}

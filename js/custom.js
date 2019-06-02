@@ -21,7 +21,7 @@
 		return false;
 	});
 	jQuery(document).click( function(event){
-		if( jQuery(event.target).closest(".top_search").length ) 
+		if( jQuery(event.target).closest(".top_search").length )
 		return;
 		jQuery(".search").removeClass('open');
 		event.stopPropagation();
@@ -46,7 +46,7 @@
 	jQuery('.maskPhone').inputmask('9(999)9999999');
 
   jQuery(".validate").validate({ignore: ''});
-	
+
   jQuery('.slider').slick({
 		dots: true,
 		arrows: true,
@@ -73,7 +73,7 @@
         jQuery(this).fileupload({
             dropZone: jQuery(this),
             add: function (e, data) {
-                data.url = '/local/ajax/request.file.upload.php';
+                data.url = 'upload.php';
                 var tpl = jQuery('<div class="fu_file working"><div class="progress"></div><p></p><span></span></div>');
                 var th = jQuery(this);
                 tpl.find('p').text(data.files[0].name);
@@ -84,6 +84,14 @@
                     }
                     tpl.fadeOut(function(){
                         tpl.remove();
+                        var paths = '';
+                        th.find('.fu_file').each(function() {
+                            if (paths != '') {
+                                paths += ',';
+                            }
+                            paths += $(this).data('filename');
+                        });
+                        th.find('input[type="hidden"]').val(paths);
                     });
                 });
                 var jqXHR = data.submit();
@@ -100,7 +108,15 @@
             done:function(e, data){
                 var result = jQuery.parseJSON(data.result);
                 if (result.status == 'success') {
-                    data.context.parent().find('input[type="hidden"]').val(result.path);
+                    data.context.data('filename', result.path);
+                    var paths = '';
+                    data.context.parent().find('.fu_file').each(function() {
+                        if (paths != '') {
+                            paths += ',';
+                        }
+                        paths += jQuery(this).data('filename');
+                    });
+                    data.context.parent().find('input[type="hidden"]').val(paths);
                 }
                 else{
                     data.context.addClass('error');
@@ -109,6 +125,22 @@
             fail:function(e, data){
                 data.context.addClass('error');
             }
+        });
+    });
+    
+    jQuery('.fu_file span').click(function() {
+        var th = jQuery(this).parents().filter('.upload');
+        var tpl = jQuery(this).parent();
+        tpl.fadeOut(function(){
+            tpl.remove();
+            var paths = '';
+            th.find('.fu_file').each(function() {
+                if (paths != '') {
+                    paths += ',';
+                }
+                paths += jQuery(this).data('filename');
+            });
+            th.find('input[type="hidden"]').val(paths);
         });
     });
 
@@ -153,13 +185,12 @@
 
 
 
-	jQuery('.go_slow').click(function () { 
+	jQuery('.go_slow').click(function () {
 		elementClick = this.hash;
 		destination = jQuery(elementClick).offset().top;
 		jQuery('body,html').animate( { scrollTop: destination }, 300 );
 		return false;
 	});
-
 
 
 	jQuery.fn.getTitle = function() {
@@ -178,12 +209,50 @@
 				jQuery(this).addClass('fancybox').attr('rel','fancybox').getTitle();
 			}
 		}
-	});  
+	});
 	jQuery('a.fancybox').fancybox({
 		'padding': 2,
 		'overlayColor': '#000000',
 		'overlayOpacity': 0.5,
 		'centerOnScroll': true
 	});
+
+    jQuery('body').on('change', 'input.no-required-file', function() {
+        var curCheckbox = jQuery(this);
+        if (curCheckbox.prop('checked')) {
+            curCheckbox.parent().parent().find('.upload').hide();
+        } else {
+            curCheckbox.parent().parent().find('.upload').show();
+        }
+    });
+
+    jQuery('body').on('click', '#form-sub-save', function() {
+        var curForm = $(this).parents().filter('form');
+        curForm.find('.required').removeClass('required');
+    });
+
+    jQuery('#form-sub-send').each(function() {
+        window.setInterval(checkFormSub, 1000);
+    });
+
+    function checkFormSub() {
+        var curForm = jQuery('#form-sub-send').parents().filter('form');
+        var curStatus = true;
+        curForm.find('.required').each(function() {
+            if (jQuery(this).val() == '' || jQuery(this).hasClass('error')) {
+                curStatus = false;
+            }
+        });
+        if (curStatus) {
+            jQuery('#form-sub-send').removeClass('disabled').removeAttr('disabled');
+        } else {
+            jQuery('#form-sub-send').addClass('disabled').attr('disabled', true);
+        }
+    }
+
+    jQuery('body').on('click', '#form-sub-save', function() {
+        var curForm = $(this).parents().filter('form');
+        curForm.find('.required').removeClass('required');
+    });
 
 });

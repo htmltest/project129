@@ -44,71 +44,71 @@
         <ul>
 
 
-	
-	
-            <li><a href="/centers/">Центры</a></li>    
-            
-	
 
-	
-	
-            <li><a href="/organizations/">Организации</a></li>    
-            
-	
 
-	
-	
+            <li><a href="/centers/">Центры</a></li>
+
+
+
+
+
+            <li><a href="/organizations/">Организации</a></li>
+
+
+
+
+
             <li class="sub_nav "><a href="/docs/">Официальные документы</a>
 						<div class="nav_top_sub">
 							<div class="wrap">
-								<ul>            
-    
-	
+								<ul>
 
-	
-	
-            <li><a href="/docs/?category=56">Нормативные правовые документы</a></li>    
-        </ul><ul>    
-	
 
-	
-	
-            <li><a href="/docs/?category=61">Документы конкурсного отбора</a></li>    
-            
-	
 
-			</ul><div class="clear"></div></div></div></li>	
-	
-            <li><a href="/councils/">Советы</a></li>    
-            
-	
 
-	
-	
-            <li><a href="/results/">Результаты работы НЦМУ</a></li>    
-            
-	
 
-	
-	
+            <li><a href="/docs/?category=56">Нормативные правовые документы</a></li>
+        </ul><ul>
+
+
+
+
+            <li><a href="/docs/?category=61">Документы конкурсного отбора</a></li>
+
+
+
+			</ul><div class="clear"></div></div></div></li>
+
+            <li><a href="/councils/">Советы</a></li>
+
+
+
+
+
+            <li><a href="/results/">Результаты работы НЦМУ</a></li>
+
+
+
+
+
             <li class="sub_nav "><a href="/help/">Помощь</a>
 						<div class="nav_top_sub">
 							<div class="wrap">
-								<ul>            
-    
-	
+								<ul>
 
-	
-	
-            <li><a href="/help/faq/">Вопросы и ответы</a></li>    
-        </ul><ul>    
-	
 
-	
-	
-            <li><a href="/help/contacts/">Контакты</a></li>    
-            
-	
+
+
+
+            <li><a href="/help/faq/">Вопросы и ответы</a></li>
+        </ul><ul>
+
+
+
+
+            <li><a href="/help/contacts/">Контакты</a></li>
+
+
 
 	</ul><div class="clear"></div></div></div></li>
 </ul>
@@ -123,11 +123,11 @@
 	<div class="wrap">
 		<section id="content">
 			<div class="bread">
-				<a href="/" title="Главная" >Главная</a> <span>&rarr;</span> 
-				<a href="/personal/" title="Личный кабинет" >Личный кабинет</a> <span>&rarr;</span> 
+				<a href="/" title="Главная" >Главная</a> <span>&rarr;</span>
+				<a href="/personal/" title="Личный кабинет" >Личный кабинет</a> <span>&rarr;</span>
 				<a href="/personal/org/" title="Инициатор" >Инициатор</a> <span>&rarr;</span> Заявка на участие</div>                <div class="entry">
 		<h1>Заявка</h1>
-        
+
 
 <blockquote class='time_info'>
 <b>Внимание!</b><br />
@@ -152,7 +152,7 @@
 			<div class="upload">
 				<a>перенесите сюда файл</a>
 				<input type="file" name="upl1" />
-				<input type="hidden" name="fname1" value="" />
+				<input type="hidden" name="fname1" class="required" value="" />
 			</div>
 		</td>
 			</tr>
@@ -163,7 +163,7 @@
 			<div class="upload">
 				<a>перенесите сюда файл</a>
 				<input type="file" name="upl3" />
-				<input type="hidden" name="fname3" value="" />
+				<input type="hidden" name="fname3" class="required" value="" />
 			</div>
 		</td>
 			</tr>
@@ -179,7 +179,7 @@
 			<div class="upload">
 				<a>перенесите сюда файл</a>
 				<input type="file" name="upl4" />
-				<input type="hidden" name="fname4" value="" />
+				<input type="hidden" name="fname4" class="required" value="" />
 			</div>
 		</td>
 			</tr>
@@ -190,7 +190,7 @@
 			<div class="upload">
 				<a>перенесите сюда файл</a>
 				<input type="file" name="upl5" />
-				<input type="hidden" name="fname5" value="" />
+				<input type="hidden" name="fname5" class="required" value="" />
 			</div>
 		</td>
 			</tr>
@@ -198,13 +198,12 @@
 		<td>2</td>
 		<td><label class="lab3">Согласие учредителя организации, на базе которой создан центр, либо учредителей участников центра на участие подведомственных им организаций в конкурсном отборе и последующее заключение организациями соглашения о предоставлении гранта – для бюджетных и автономных учреждений, не находящихся в ведении Министерства науки и высшего образования Российской Федерации или Правительства Российской Федерации.</label></td>
 		<td>
+			<input type="checkbox" name="upl6_" class="no-required-file"> Не требуется
 			<div class="upload">
 				<a>перенесите сюда файл</a>
 				<input type="file" name="upl6" />
 				<input type="hidden" name="fname6" value="" />
 			</div>
-			<br>
-			<input type="checkbox" name="upl6_"> Не требуется
 		</td>
 			</tr>
 	<tr>
@@ -213,8 +212,9 @@
 		<td>
 			<div class="upload">
 				<a>перенесите сюда файл</a>
-				<input type="file" name="upl7" />
-				<input type="hidden" name="fname7" value="" />
+				<input type="file" name="upl7" value="example.png" />
+				<input type="hidden" name="fname7" class="required" />
+                <div class="fu_file" data-filename="example.png"><div class="progress" style="width: 100%;"></div><p>example.png</p><span></span></div>
 			</div>
 		</td>
 			</tr>
@@ -222,32 +222,32 @@
 		<td>4</td>
 		<td><label class="lab3">Проект Программы создания и развития центра</label></td>
 		<td>
+			<input type="checkbox" name="upl8_" class="no-required-file"> Не требуется
 			<div class="upload">
 				<a>перенесите сюда файл</a>
 				<input type="file" name="upl8" />
 				<input type="hidden" name="fname8" value="" />
 			</div>
-			<br>
-			<input type="checkbox" name="upl8_"> Не требуется
 		</td>
 			</tr>
 	<tr>
 		<td>5</td>
 		<td><label class="lab3">Проект Программы создания и развития центра</label></td>
 		<td>
-			<div class="upload">
+			<input type="checkbox" name="upl9_" class="no-required-file"> Не требуется
+			<div class="upload upload-multiple">
 				<a>перенесите сюда файл</a>
-				<input type="file" name="upl9" />
-				<input type="hidden" name="fname9" value="" />
+				<input type="file" name="upl9" multiple="multiple" />
+				<input type="hidden" name="fname9" value="example.png, example.png" />
+                <div class="fu_file" data-filename="example.png"><div class="progress" style="width: 100%;"></div><p>example.png</p><span></span></div>
+                <div class="fu_file" data-filename="example.png"><div class="progress" style="width: 100%;"></div><p>example.png</p><span></span></div>
 			</div>
-			<br>
-			<input type="checkbox" name="upl9_"> Не требуется
 		</td>
 			</tr>
 	</table>
 	<div class="form_sub">
-		<input class="btn btn_sm" type="submit" name="request" value="Сохранить заявку" />
-		&nbsp;&nbsp;&nbsp;<a class="btn red btn_sm" href="#">Отправить заявку</a>
+		<input class="btn btn_sm" type="submit" name="request" id="form-sub-save" value="Сохранить заявку" />
+        &nbsp;&nbsp;&nbsp;<input class="btn red btn_sm" type="submit" name="send" id="form-sub-send" value="Отправить заявку" />
 	</div>
 </form>
 
