@@ -142,7 +142,13 @@
 	<tr>
 		<td>1</td>
 		<td><label class="lab3">Заявка на участие в конкурсном отборе</label></td>
-		<td></td>
+		<td>
+			<div class="upload">
+				<a>перенесите сюда файл</a>
+				<input type="file" name="upl0" />
+				<input type="hidden" name="fname0" class="required" value="" />
+			</div>
+        </td>
 	</tr>
 
 	<tr>
@@ -210,11 +216,10 @@
 		<td>3</td>
 		<td><label class="lab3">Проект Программы создания и развития центра</label></td>
 		<td>
-			<div class="upload">
+			<div class="upload upload-multiple">
 				<a>перенесите сюда файл</a>
-				<input type="file" name="upl7" value="example.png" />
+				<input type="file" name="upl7" value="" multiple="multiple" />
 				<input type="hidden" name="fname7" class="required" />
-                <div class="fu_file" data-filename="example.png"><div class="progress" style="width: 100%;"></div><p>example.png</p><span></span></div>
 			</div>
 		</td>
 			</tr>
@@ -239,8 +244,8 @@
 				<a>перенесите сюда файл</a>
 				<input type="file" name="upl9" multiple="multiple" />
 				<input type="hidden" name="fname9" value="example.png, example.png" />
-                <div class="fu_file" data-filename="example.png"><div class="progress" style="width: 100%;"></div><p>example.png</p><span></span></div>
-                <div class="fu_file" data-filename="example.png"><div class="progress" style="width: 100%;"></div><p>example.png</p><span></span></div>
+                <div class="fu_file" data-filename="example.png"><div class="progress"></div><p><a href="#">example.png</a></p><span></span></div>
+                <div class="fu_file" data-filename="example.png"><div class="progress"></div><p><a href="#">example.png</a></p><span></span></div>
 			</div>
 		</td>
 			</tr>

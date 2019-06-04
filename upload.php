@@ -3,6 +3,21 @@
 // A list of permitted file extensions
 $allowed = array('png', 'jpg', 'gif','zip');
 
+if(isset($_FILES['upl0']) && $_FILES['upl0']['error'] == 0){
+
+	$extension = pathinfo($_FILES['upl0']['name'], PATHINFO_EXTENSION);
+
+	if(!in_array(strtolower($extension), $allowed)){
+		echo '{"status":"error"}';
+		exit;
+	}
+
+	if(move_uploaded_file($_FILES['upl0']['tmp_name'], 'uploads/'.$_FILES['upl0']['name'])){
+		echo '{"status":"success", "path":"' . 'uploads/'.$_FILES['upl0']['name'] . '"}';
+		exit;
+	}
+}
+
 if(isset($_FILES['upl1']) && $_FILES['upl1']['error'] == 0){
 
 	$extension = pathinfo($_FILES['upl1']['name'], PATHINFO_EXTENSION);

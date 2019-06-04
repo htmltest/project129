@@ -101,7 +101,7 @@
                 if(progress == 100){
                     data.context.removeClass('working');
                 }
-                jQuery(this).find('.progress').css(
+                data.context.find('.progress').css(
                     'width', progress + '%'
                 );
             },
