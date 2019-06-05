@@ -1666,6 +1666,9 @@ header {
     padding:0;
     border:none;
 }
+.fu_file input {
+    display: none;
+}
 .progress {
 	width: 0px;
     height: 62px;

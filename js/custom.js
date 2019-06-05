@@ -74,7 +74,7 @@
             dropZone: jQuery(this),
             add: function (e, data) {
                 data.url = 'upload.php';
-                var tpl = jQuery('<div class="fu_file working"><div class="progress"></div><p></p><span></span></div>');
+                var tpl = jQuery('<div class="fu_file working"><div class="progress"></div><p></p><span></span><input type="text" name="" value="" /></div>');
                 var th = jQuery(this);
                 tpl.find('p').text(data.files[0].name);
                 data.context = tpl.appendTo(th);
@@ -117,6 +117,8 @@
                         paths += jQuery(this).data('filename');
                     });
                     data.context.parent().find('input[type="hidden"]').val(paths);
+                    data.context.find('input[type="text"]').attr('name', result.name);
+                    data.context.find('input[type="text"]').val(result.value);
                 }
                 else{
                     data.context.addClass('error');
