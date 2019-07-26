@@ -635,9 +635,6 @@ header {
 	background: #1c48a3;
 	}
 
-.home .top{
-	background: rgba(29, 54, 180, 0.8);
-	}
 
 .logo{
 	float: left;
@@ -1625,7 +1622,7 @@ header {
 .upload.hover{
     background: #eefafa;
 	}
-    
+
     .upload a {
         background: #fff
     }
@@ -1942,7 +1939,7 @@ footer {
 select.error+label.error {position:absolute; left:0; bottom:0}
 select.error+label.error+.jq-selectbox__select {margin-bottom:24px}
 .jq-checkbox.required {overflow:visible}
-.jq-checkbox label.error {position:absolute; left:0; bottom:100%; margin-bottom:5px; white-space:nowrap} 
+.jq-checkbox label.error {position:absolute; left:0; bottom:100%; margin-bottom:5px; white-space:nowrap}
 /* End */
 
 
@@ -1970,8 +1967,8 @@ select.error+label.error+.jq-selectbox__select {margin-bottom:24px}
 	background-position: 0px -14px;
 }
 
-    
-.top_user ul{font-size: 15px;padding: 5px 21px;}    
+
+.top_user ul{font-size: 15px;padding: 5px 21px;}
 
 .faq-list h3{padding-top: 20px;}
 
@@ -2011,3 +2008,17 @@ blockquote.time_info{ padding: 20px 50px; border-top: 5px solid #f5d008; backgro
 .btn.disabled {cursor:default; pointer-events:none; opacity:0.5}
 
 .g-recaptcha > div {margin:0 auto}
+
+.header-docs {display:block; position:absolute; left:50%; top:55px; transform:translate(-50%, -50%); color:#fff; border:3px solid #727cc1; padding:13px; font-weight:bold; text-transform:uppercase; font-size:14px; opacity:1; transition:opacity 0.2s 0.2s}
+.header-docs.hidden {opacity:0}
+.header-docs img {vertical-align:middle; margin:-2px 10px 0 0}
+.header-docs:hover {color:#fff; text-decoration:none; border-color:#fff}
+.header-docs-mobile {display:none}
+
+@media (max-width:1020px) {
+    .header-docs {display:none}
+    .header-docs-mobile {display:table; width:100%; background:#d60808; color:#fff; font-weight:bold; text-transform:uppercase; font-size:15px; line-height:20px; text-align:left; position:relative}
+    .header-docs-mobile:hover {color:#fff; text-decoration:none}
+    .header-docs-mobile span {display:table-cell; vertical-align:middle; height:60px; padding:0 0 0 66px; position:relative}
+    .header-docs-mobile img {position:absolute; left:14px; top:50%; transform:translateY(-50%)}
+}

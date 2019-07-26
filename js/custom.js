@@ -18,12 +18,14 @@
 
 	jQuery('.show_search').click(function() {
 		jQuery('.search').addClass('open');
+		jQuery('.header-docs').addClass('hidden');
 		return false;
 	});
 	jQuery(document).click( function(event){
 		if( jQuery(event.target).closest(".top_search").length )
 		return;
 		jQuery(".search").removeClass('open');
+		jQuery('.header-docs').removeClass('hidden');
 		event.stopPropagation();
 	});
 
@@ -129,7 +131,7 @@
             }
         });
     });
-    
+
     jQuery('.fu_file span').click(function() {
         var th = jQuery(this).parents().filter('.upload');
         var tpl = jQuery(this).parent();
