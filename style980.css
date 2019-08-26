@@ -114,3 +114,12 @@
 	width: 200px;
 	padding: 10px 0 0 20px;
 	}
+    
+.nav_top > ul > li {padding:0}
+.nav_top > ul > li.sub_nav {padding:0 16px}
+
+.home_top {padding:0}
+.home_top_txt {padding-top:220px}
+.home_top_right {padding-top:156px}
+
+.header-with-docs-link {height:249px}
