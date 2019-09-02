@@ -136,6 +136,6 @@ footer {
 .wrap_h {overflow:hidden}
 .home_top {padding:0}
 .home_top_left_bg {display:none}
-.home_top_txt {float:none; width:auto; padding:260px 130px 60px 130px; background:url(images/home_top.jpg) no-repeat center top; background-size:cover; margin-left:-130px; margin-right:-130px; max-width:none}
+.home_top_txt {float:none; width:auto; padding:157px 130px 60px 130px; background:url(images/home_top.jpg) no-repeat center top; background-size:cover; margin-left:-130px; margin-right:-130px; max-width:none}
 .home_top_right_bg {display:none}
 .home_top_right {padding:60px 130px; background:#253a9f url(images/home_top_right_bg.png) no-repeat; background-size:cover; float:none; width:auto; margin-left:-130px; margin-right:-130px}
