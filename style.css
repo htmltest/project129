@@ -2063,3 +2063,5 @@ blockquote.time_info{ padding: 20px 50px; border-top: 5px solid #f5d008; backgro
 .home_top_right_all span {font-family:Arial, Helvetica, sans-serif; font-weight:normal}
 
 .top .wrap::after {content:""; display:block; clear:both}
+
+.header-lang-mobile {display:none}

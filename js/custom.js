@@ -259,4 +259,14 @@
         curForm.find('.required').removeClass('required');
     });
 
+    jQuery('.header-lang-mobile').click(function() {
+        jQuery('.header-lang-mobile').toggleClass('open');
+    });
+
+    jQuery(document).click(function(e) {
+        if (jQuery(e.target).parents().filter('.header-lang-mobile').length == 0) {
+            jQuery('.header-lang-mobile').removeClass('open');
+        }
+    });
+
 });

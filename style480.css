@@ -419,3 +419,13 @@ footer {
 .home_top_right_title {font-size:30px; line-height:36px}
 
 .header-with-docs-link {height:auto}
+
+.header-lang-mobile {display:block; float:right; position:relative; margin:12px 21px 0 0}
+.header-lang-mobile-current {width:40px; height:40px; border:1px solid #fff; font-weight:normal; font-size:17px; line-height:38px; text-align:center; color:#fff; text-decoration:none; cursor:pointer; position:relative}
+.header-lang-mobile-list {display:none}
+.header-lang-mobile-list::before {content:""; display:block; width:22px; height:20px; position:absolute; left:50%; top:-9px; margin-left:-11px; background:url(images/header-lang-mobile-arrow.svg) no-repeat}
+.header-lang-mobile.open .header-lang-mobile-list {display:block; position:absolute; left:-5px; top:100%; width:56px; margin-top:12px; border:1px solid #e4e4e4; background:#fff; z-index:99}
+.header-lang-mobile-list div {float:none; width:auto; height:51px; border:none; border-top:1px solid #e4e4e4; text-align:left; line-height:51px; padding:0 0 0 10px; position:relative; margin:0; font-size:17px}
+.header-lang-mobile-list div:first-child {border-top:none}
+.header-lang-mobile-list div.active {display:block}
+.header-lang-mobile-list div.active::after {content:""; display:inline-block; vertical-align:middle; width:16px; height:16px; background:url(images/header-lang-mobile.svg) no-repeat; background-size:100%; margin:-2px 0 0 6px}
