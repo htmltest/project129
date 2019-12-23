@@ -18,7 +18,7 @@
 	padding: 0 10px 0 35px;
 	}
 
-.search.open{
+.search{
 	width: 300px;
 	}
 
@@ -139,3 +139,33 @@ footer {
 .home_top_txt {float:none; width:auto; padding:157px 130px 60px 130px; background:url(images/home_top.jpg) no-repeat center top; background-size:cover; margin-left:-130px; margin-right:-130px; max-width:none}
 .home_top_right_bg {display:none}
 .home_top_right {padding:60px 130px; background:#253a9f url(images/home_top_right_bg.png) no-repeat; background-size:cover; float:none; width:auto; margin-left:-130px; margin-right:-130px}
+
+.vacancies-notice {padding:19px 30px 11px 86px; background:#f0f0f0; margin:33px 0 0 0}
+.vacancies-notice::before {left:23px; top:17px}
+.vacancies-notice-text {font-size:18px; line-height:24px}
+.vacancies-notice-phone {padding:11px 0 0 0}
+.vacancies {margin:50px 0 63px 0}
+.vacancies-center {padding:40px 0 50px 0}
+.vacancies-company {margin:40px 0 0 0}
+.vacancies-center h3+.vacancies-company {margin:52px 0 0 0}
+.vacancies-company-info {padding:0 20px}
+.vacancies-company-info h4 {font-size:16px; line-height:24px; padding:24px 0 21px 0}
+.vacancies-company-descr {font-size:18px; line-height:28px; padding:0 0 31px 0; margin-top:-14px}
+.vacancies-company-contacts {display:block; margin:15px 0 0 0}
+.vacancies-company-contacts-row {display:block; margin:12px 0 0 0}
+.vacancies-company-contacts-title {display:block; padding:0}
+.vacancies-company-contacts-value {display:block; width:auto}
+.vacancies-list {padding:0}
+.vacancies-item {font-size:18px; line-height:28px; padding:34px 20px 26px 20px}
+.vacancies-item-title {font-size:22px; margin:0 0 -3px 0}
+.vacancy {border-bottom:3px solid #1c48a3; padding:0 0 60px 0}
+.vacancy .vacancies-company-info {padding:0 20px 0 20px}
+.vacancy .vacancies-list {padding:0; background:none}
+.vacancy .vacancies-company-contacts {margin:15px 0 0 0}
+.vacancy .vacancies-item {margin:30px 0 0 0; border-top:1px solid #dbdbdb; border-bottom:1px solid #dbdbdb; background:#fafafa; padding:23px 20px 18px 20px}
+.vacancy-info::after {display:none}
+.vacancy-info-title {float:none; width:auto; font-size:22px}
+.vacancy-info-text {margin:2px 0 0 0}
+.vacancy-info-text ul li {margin:4px 0 0 0}
+.vacancy-info-text ul li:first-child {margin:0}
+.vacancy-info-text ul li:before {left:0; top:10px}
