@@ -47,11 +47,13 @@
 
 	jQuery('.maskPhone').inputmask('9(999)9999999');
 
-  jQuery(".validate").validate({
-      ignore: '',
-      invalidHandler: function(form, validator) {
-          window.setTimeout(function() {$('input[name="USER_PASSWORD"]').prop('disabled', false);}, 100);
-      }
+  jQuery(".validate").each(function() {
+      $(this).validate({
+          ignore: '',
+          invalidHandler: function(form, validator) {
+            window.setTimeout(function() {$('input[name="USER_PASSWORD"]').prop('disabled', false);}, 100);
+          }
+      });
   });
 
   jQuery('.slider').slick({
